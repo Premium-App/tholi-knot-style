@@ -151,12 +151,11 @@ function LandingPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       {/* 1. Announcement bar */}
-      <div className="fixed inset-x-0 top-0 z-50 overflow-hidden bg-brand py-2 text-sm font-semibold text-brand-foreground">
+      <div className="fixed inset-x-0 top-0 z-50 overflow-hidden bg-brand py-2 text-xs font-medium tracking-wide text-brand-foreground sm:text-sm">
         <div className="marquee-track whitespace-nowrap">
           {[0, 1].map((i) => (
             <span key={i} className="px-6">
-              🔥 ২টি ব্যাগ নিলে ৳100 ছাড়! &nbsp;|&nbsp; ✅ Cash on Delivery &nbsp;|&nbsp; 🚚 ঢাকায়
-              ২-৪ দিনে ডেলিভারি &nbsp;|&nbsp;
+              ২টি ব্যাগ নিলে ৳100 ছাড় &nbsp;·&nbsp; ক্যাশ অন ডেলিভারি সারা দেশে &nbsp;·&nbsp; ঢাকায় ২–৪ দিনে ডেলিভারি &nbsp;·&nbsp;
             </span>
           ))}
         </div>
@@ -164,7 +163,7 @@ function LandingPage() {
 
       {/* 2. Navbar */}
       <header
-        className={`fixed inset-x-0 top-[34px] z-40 bg-card transition-shadow ${
+        className={`fixed inset-x-0 top-[34px] z-40 border-b border-border/70 bg-card/95 backdrop-blur transition-shadow ${
           scrolled ? "shadow-md" : ""
         }`}
       >
@@ -175,7 +174,7 @@ function LandingPage() {
               alt="Tholi (থলি) logo"
               className="h-10 w-10 shrink-0 rounded-lg object-contain"
             />
-            <span className="truncate text-xl font-extrabold text-brand">Tholi</span>
+            <span className="truncate text-xl font-extrabold tracking-tight text-brand">Tholi</span>
           </div>
           <OrderButton className="shrink-0 rounded-full bg-brand px-4 py-2 text-sm font-bold text-brand-foreground transition-transform hover:scale-105">
             অর্ডার করুন
@@ -188,11 +187,11 @@ function LandingPage() {
         <section className="bg-gradient-to-b from-background to-peach px-4 py-8 sm:py-12">
           <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
-              <span className="inline-block rounded-full bg-brand/15 px-3 py-1 text-sm font-bold text-brand">
-                🔥 HOT SELLING
+              <span className="inline-block rounded-full border border-brand/25 bg-brand/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-brand">
+                বেস্ট সেলিং কালেকশন
               </span>
               <h1 className="mt-4 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
-                তোমার স্টাইলের পারফেক্ট সঙ্গী 👜
+                তোমার স্টাইলের পারফেক্ট সঙ্গী
               </h1>
               <p className="mt-3 text-base text-muted-foreground sm:text-lg">
                 Geometric Knot Crossbody Bag — ট্রেন্ডি ডিজাইন, প্রিমিয়াম কোয়ালিটি, সাশ্রয়ী দাম
@@ -236,7 +235,7 @@ function LandingPage() {
                 </p>
               </div>
 
-              <OrderButton className="cta-bounce mt-6 w-full rounded-2xl bg-brand px-6 py-4 text-lg font-extrabold text-brand-foreground shadow-lg sm:w-auto">
+              <OrderButton className="mt-6 w-full rounded-2xl bg-brand px-6 py-4 text-lg font-extrabold text-brand-foreground shadow-lg sm:w-auto">
                 এখনই অর্ডার করুন →
               </OrderButton>
 
@@ -276,8 +275,8 @@ function LandingPage() {
         {/* 5. Color gallery */}
         <Reveal as="section" className="px-4 py-12">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-center text-2xl font-extrabold sm:text-3xl">
-              ৬টি স্টানিং কালার — তোমারটা বেছে নাও 🎨
+            <h2 className="text-center text-2xl font-extrabold tracking-tight sm:text-[2rem]">
+              ৬টি কালার — আপনার পছন্দটা বেছে নিন
             </h2>
             <div className="mt-7 grid grid-cols-2 gap-4 md:grid-cols-3">
               {COLORS.map((c) => {
@@ -371,14 +370,14 @@ function LandingPage() {
         {/* 7. Features */}
         <Reveal as="section" className="px-4 py-12">
           <div className="mx-auto max-w-5xl">
-            <h2 className="text-center text-2xl font-extrabold sm:text-3xl">
-              কেন এই ব্যাগটাই তোমার দরকার? 💕
+            <h2 className="text-center text-2xl font-extrabold tracking-tight sm:text-[2rem]">
+              কেন এই ব্যাগটাই বেছে নেবেন
             </h2>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {FEATURES.map((f) => (
                 <article
                   key={f.title}
-                  className="rounded-2xl bg-card p-5 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
+                  className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
                 >
                   <span className="text-3xl">{f.icon}</span>
                   <h3 className="mt-3 text-lg font-extrabold">{f.title}</h3>
@@ -393,8 +392,8 @@ function LandingPage() {
         {/* 8. Detail showcase */}
         <Reveal as="section" className="bg-peach px-4 py-12">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-center text-2xl font-extrabold sm:text-3xl">
-              প্রতিটি ডিটেইল যত্ন দিয়ে তৈরি 🔍
+            <h2 className="text-center text-2xl font-extrabold tracking-tight sm:text-[2rem]">
+              প্রতিটি ডিটেইল যত্ন দিয়ে তৈরি
             </h2>
             <div className="mt-7 flex snap-x gap-4 overflow-x-auto pb-3 md:grid md:grid-cols-4 md:overflow-visible">
               {[
@@ -405,7 +404,7 @@ function LandingPage() {
               ].map((d) => (
                 <figure
                   key={d.cap}
-                  className="w-[220px] shrink-0 snap-start rounded-2xl bg-card p-2 shadow-sm md:w-auto"
+                  className="w-[220px] shrink-0 snap-start rounded-2xl border border-border/70 bg-card p-2 shadow-sm md:w-auto"
                 >
                   <img
                     src={d.img}
@@ -424,7 +423,7 @@ function LandingPage() {
         {/* 9. Specs */}
         <Reveal as="section" className="px-4 py-12">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-center text-2xl font-extrabold sm:text-3xl">স্পেসিফিকেশন 📋</h2>
+            <h2 className="text-center text-2xl font-extrabold tracking-tight sm:text-[2rem]">স্পেসিফিকেশন</h2>
             <dl className="mt-7 overflow-hidden rounded-2xl border border-border">
               {SPECS.map(([k, v], i) => (
                 <div
@@ -444,14 +443,14 @@ function LandingPage() {
         {/* 10. Reviews */}
         <Reveal as="section" className="bg-peach px-4 py-12">
           <div className="mx-auto max-w-5xl">
-            <h2 className="text-center text-2xl font-extrabold sm:text-3xl">
-              কাস্টমারদের মতামত 💬
+            <h2 className="text-center text-2xl font-extrabold tracking-tight sm:text-[2rem]">
+              কাস্টমারদের মতামত
             </h2>
             <div className="mt-7 flex snap-x gap-4 overflow-x-auto pb-3 sm:grid sm:grid-cols-2 sm:overflow-visible">
               {REVIEWS.map((r) => (
                 <article
                   key={r.who}
-                  className="w-[280px] shrink-0 snap-center rounded-2xl bg-card p-5 shadow-sm sm:w-auto"
+                  className="w-[280px] shrink-0 snap-center rounded-2xl border border-border/70 bg-card p-6 shadow-sm sm:w-auto"
                 >
                   <p className="text-lg">{"⭐".repeat(r.stars)}</p>
                   <p className="mt-3 text-sm leading-relaxed">{r.text}</p>
@@ -467,14 +466,14 @@ function LandingPage() {
         {/* 11. FAQ */}
         <Reveal as="section" className="px-4 py-12">
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-center text-2xl font-extrabold sm:text-3xl">সচরাচর জিজ্ঞাসা ❓</h2>
+            <h2 className="text-center text-2xl font-extrabold tracking-tight sm:text-[2rem]">সচরাচর জিজ্ঞাসা</h2>
             <div className="mt-7 space-y-3">
               {FAQS.map(([q, a], i) => {
                 const open = openFaq === i;
                 return (
                   <div
                     key={q}
-                    className={`overflow-hidden rounded-2xl bg-card shadow-sm ${
+                    className={`overflow-hidden rounded-2xl border border-border/70 bg-card shadow-sm ${
                       open ? "border-l-4 border-brand" : ""
                     }`}
                   >
@@ -507,10 +506,10 @@ function LandingPage() {
             <p className="mt-2 text-muted-foreground">এই offer যেকোনো সময় শেষ হতে পারে</p>
             <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-card px-4 py-2 text-sm font-bold">
               <span className="pulse-ring inline-block h-2.5 w-2.5 rounded-full bg-brand" />
-              limited stock — আজকের জন্য মাত্র কয়েকটি বাকি
+              সীমিত স্টক — আজকের জন্য মাত্র কয়েকটি বাকি
             </p>
             <div className="mt-6">
-              <OrderButton className="cta-bounce w-full rounded-2xl bg-brand px-7 py-4 text-lg font-extrabold text-brand-foreground shadow-lg sm:w-auto">
+              <OrderButton className="w-full rounded-2xl bg-brand px-7 py-4 text-lg font-extrabold text-brand-foreground shadow-lg sm:w-auto">
                 এখনই অর্ডার করুন →
               </OrderButton>
             </div>
@@ -519,7 +518,7 @@ function LandingPage() {
 
         {/* 13. Order form */}
         <section id="order" className="border-t-4 border-brand bg-cream px-4 py-12">
-          <h2 className="text-center text-2xl font-extrabold sm:text-3xl">তোমার অর্ডার দাও 🛒</h2>
+          <h2 className="text-center text-2xl font-extrabold tracking-tight sm:text-[2rem]">অর্ডার করুন</h2>
           <p className="mt-2 text-center text-muted-foreground">
             ফর্মটা পূরণ করো — আমরা ফোন করে কনফার্ম করবো
           </p>
@@ -548,13 +547,19 @@ function LandingPage() {
                 Contact
               </a>
             </div>
-            <div className="mt-5 flex justify-center gap-4 text-xl" aria-label="Social links">
-              <span title="Facebook">📘</span>
-              <span title="Instagram">📸</span>
-              <span title="TikTok">🎵</span>
+            <div className="mt-5 flex justify-center gap-3" aria-label="Social links">
+              {["Facebook", "Instagram", "TikTok"].map((n) => (
+                <span
+                  key={n}
+                  title={n}
+                  className="grid h-9 w-9 place-items-center rounded-full border border-white/25 text-xs font-bold text-white/85"
+                >
+                  {n.slice(0, 2)}
+                </span>
+              ))}
             </div>
-            <p className="mt-6 text-xs">© 2024 Tholi (থলি). সর্বস্বত্ব সংরক্ষিত।</p>
-            <p className="mt-1 text-xs">Made with ❤️ in Bangladesh 🇧🇩</p>
+            <p className="mt-6 text-xs">© 2026 Tholi (থলি). সর্বস্বত্ব সংরক্ষিত।</p>
+            <p className="mt-1 text-xs">Designed &amp; delivered in Bangladesh</p>
           </div>
         </footer>
       </main>
@@ -576,7 +581,7 @@ function LandingPage() {
         <div className="slide-up-bar fixed inset-x-0 bottom-0 z-40 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 bg-card px-4 py-2.5 shadow-[0_-4px_12px_rgba(0,0,0,0.08)] md:hidden">
           <div className="min-w-0">
             <span className="text-xs text-muted-foreground">থেকে</span>
-            <p className="text-xl font-extrabold text-brand">৳700</p>
+            <p className="text-xl font-extrabold tracking-tight text-brand">৳700</p>
           </div>
           <OrderButton className="shrink-0 rounded-full bg-brand px-5 py-3 text-sm font-bold text-brand-foreground">
             অর্ডার করুন
