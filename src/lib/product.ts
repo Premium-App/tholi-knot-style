@@ -27,7 +27,8 @@ export const COLORS: BagColor[] = [
 
 export const PRICE_ONE = 700;
 export const PRICE_TWO = 1300;
-export const DELIVERY = { dhaka: 60, outside: 120 } as const;
+export const PRICE_ORIGINAL = 1400;
+export const DELIVERY = { dhaka: 80, outside: 150 } as const;
 export type DeliveryArea = keyof typeof DELIVERY;
 
 export const PHONE = "01793648214";
