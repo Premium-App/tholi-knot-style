@@ -103,7 +103,7 @@ const FAQS = [
   ],
   [
     "ডেলিভারি চার্জ কত?",
-    "ঢাকার ভিতরে ৳60, ঢাকার বাইরে ৳120। সম্পূর্ণ Cash on Delivery — ব্যাগ হাতে পেয়ে টাকা দেবে।",
+    "ঢাকার ভিতরে ৳80, ঢাকার বাইরে ৳150। সম্পূর্ণ Cash on Delivery — ব্যাগ হাতে পেয়ে টাকা দেবেন।",
   ],
   [
     "পছন্দ না হলে ফেরত দেওয়া যাবে?",
@@ -199,11 +199,16 @@ function LandingPage() {
               </p>
 
               <div className="mt-5 flex flex-wrap items-baseline gap-3">
-                <span className="text-4xl font-extrabold text-brand sm:text-5xl">৳700</span>
-                <span className="text-xl text-muted-foreground line-through">৳950</span>
+                <span className="text-4xl font-extrabold tracking-tight text-brand sm:text-5xl">
+                  ৳700
+                </span>
+                <span className="text-xl text-muted-foreground line-through">৳1,400</span>
+                <span className="rounded-full bg-brand/10 px-2.5 py-1 text-xs font-bold tracking-wide text-brand">
+                  ৫০% ছাড়
+                </span>
               </div>
               <p className="mt-1 text-sm font-semibold text-foreground/70">
-                অথবা ২টি মাত্র ৳1,300
+                অথবা ২টি মাত্র ৳1,300 &nbsp;·&nbsp; ডেলিভারি: ঢাকায় ৳80, বাইরে ৳150
               </p>
 
               <div className="mt-5">
