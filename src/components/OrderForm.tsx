@@ -255,7 +255,7 @@ export function OrderForm({ initialColor }: { initialColor: ColorId }) {
                   onChange={() => setDeliveryArea(area)}
                 />
                 <span className="font-semibold">
-                  {area === "dhaka" ? "ঢাকার ভিতরে (৳60)" : "ঢাকার বাইরে (৳120)"}
+                  {area === "dhaka" ? "ঢাকার ভিতরে (৳80)" : "ঢাকার বাইরে (৳150)"}
                 </span>
               </label>
             ))}

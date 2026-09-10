@@ -4,7 +4,7 @@ import { z } from "zod";
 const COLOR_IDS = ["black", "beige", "olive", "rose", "lime", "pink"] as const;
 const PRICE_ONE = 700;
 const PRICE_TWO = 1300;
-const DELIVERY = { dhaka: 60, outside: 120 } as const;
+const DELIVERY = { dhaka: 80, outside: 150 } as const;
 
 const orderSchema = z
   .object({
