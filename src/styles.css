@@ -4,27 +4,17 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
-  --font-display: "Nunito", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-coral: var(--coral);
   --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-leaf: var(--leaf);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-foreground: var(--charcoal-foreground);
   --color-peach: var(--peach);
   --color-cream: var(--cream);
   --radius-sm: calc(var(--radius) - 4px);
@@ -71,44 +61,48 @@
 
 :root {
   --radius: 0.75rem;
-  --brand: oklch(0.687 0.19 40.5);
+  --brand: oklch(0.672 0.202 38.5);
   --brand-foreground: oklch(0.995 0.005 80);
-  --coral: oklch(0.749 0.135 40);
-  --gold: oklch(0.72 0.075 82);
-  --peach: oklch(0.972 0.019 62);
-  --cream: oklch(0.985 0.014 74);
-  --background: oklch(0.985 0.014 74);
-  --foreground: oklch(0.286 0 0);
+  --coral: oklch(0.72 0.17 42);
+  --gold: oklch(0.847 0.165 86);
+  --gold-foreground: oklch(0.27 0.02 50);
+  --leaf: oklch(0.52 0.1 150);
+  --charcoal: oklch(0.245 0.02 50);
+  --charcoal-foreground: oklch(0.975 0.015 75);
+  --peach: oklch(0.955 0.028 62);
+  --cream: oklch(0.978 0.014 78);
+  --background: oklch(0.978 0.014 78);
+  --foreground: oklch(0.27 0.02 50);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.286 0 0);
+  --card-foreground: oklch(0.27 0.02 50);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.286 0 0);
-  --primary: oklch(0.687 0.19 40.5);
+  --popover-foreground: oklch(0.27 0.02 50);
+  --primary: oklch(0.672 0.202 38.5);
   --primary-foreground: oklch(0.995 0.005 80);
-  --secondary: oklch(0.972 0.019 62);
-  --secondary-foreground: oklch(0.286 0 0);
-  --muted: oklch(0.962 0.008 70);
-  --muted-foreground: oklch(0.52 0.015 60);
-  --accent: oklch(0.749 0.135 40);
+  --secondary: oklch(0.955 0.028 62);
+  --secondary-foreground: oklch(0.27 0.02 50);
+  --muted: oklch(0.96 0.01 70);
+  --muted-foreground: oklch(0.5 0.02 55);
+  --accent: oklch(0.72 0.17 42);
   --accent-foreground: oklch(0.995 0.005 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.912 0.014 66);
-  --input: oklch(0.9 0.016 66);
-  --ring: oklch(0.687 0.19 40.5);
+  --border: oklch(0.91 0.02 66);
+  --input: oklch(0.9 0.02 66);
+  --ring: oklch(0.672 0.202 38.5);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.286 0 0);
-  --sidebar-primary: oklch(0.687 0.19 40.5);
+  --sidebar-foreground: oklch(0.27 0.02 50);
+  --sidebar-primary: oklch(0.672 0.202 38.5);
   --sidebar-primary-foreground: oklch(0.995 0.005 80);
-  --sidebar-accent: oklch(0.972 0.019 62);
-  --sidebar-accent-foreground: oklch(0.286 0 0);
-  --sidebar-border: oklch(0.912 0.014 66);
-  --sidebar-ring: oklch(0.687 0.19 40.5);
+  --sidebar-accent: oklch(0.955 0.028 62);
+  --sidebar-accent-foreground: oklch(0.27 0.02 50);
+  --sidebar-border: oklch(0.91 0.02 66);
+  --sidebar-ring: oklch(0.672 0.202 38.5);
 }
 
 .dark {
@@ -177,11 +171,6 @@
   to { transform: translateX(-50%); }
 }
 
-@keyframes tholi-bounce-cta {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
 @keyframes tholi-pulse-ring {
   0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--brand) 55%, transparent); }
   70% { box-shadow: 0 0 0 14px color-mix(in oklab, var(--brand) 0%, transparent); }
@@ -203,15 +192,30 @@
   to { transform: translateY(0); }
 }
 
+@keyframes tholi-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes tholi-shimmer {
+  0% { transform: translateX(-120%) skewX(-18deg); }
+  100% { transform: translateX(320%) skewX(-18deg); }
+}
+
+@keyframes tholi-drift {
+  from { background-position: 0 0; }
+  to { background-position: 96px 96px; }
+}
+
+@keyframes tholi-glow {
+  0%, 100% { box-shadow: 0 12px 32px -10px color-mix(in oklab, var(--brand) 55%, transparent); }
+  50% { box-shadow: 0 16px 44px -8px color-mix(in oklab, var(--brand) 75%, transparent); }
+}
+
 @utility marquee-track {
   display: inline-flex;
   min-width: 200%;
   animation: tholi-marquee 22s linear infinite;
-}
-
-@utility cta-bounce {
-  animation: tholi-bounce-cta 2.2s ease-in-out infinite;
-  &:hover { animation: none; transform: scale(1.03); }
 }
 
 @utility pulse-ring {
@@ -230,6 +234,48 @@
   animation: tholi-slide-up 0.35s ease-out;
 }
 
+@utility floaty {
+  animation: tholi-float 6s ease-in-out infinite;
+}
+
+@utility cta-glow {
+  animation: tholi-glow 2.8s ease-in-out infinite;
+}
+
+/* Woven geometric textile texture — subtle diagonal weave */
+@utility textile {
+  background-image:
+    repeating-linear-gradient(45deg, color-mix(in oklab, var(--brand) 7%, transparent) 0 2px, transparent 2px 12px),
+    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--gold) 9%, transparent) 0 2px, transparent 2px 12px);
+}
+
+@utility textile-drift {
+  background-size: 96px 96px;
+  animation: tholi-drift 14s linear infinite;
+}
+
+/* Shimmer sweep overlay for CTAs and badges (use on a relative overflow-hidden parent) */
+@utility shimmer {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -20% auto -20% 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, white 45%, transparent), transparent);
+    animation: tholi-shimmer 3.2s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
+
+@utility gold-text {
+  background: linear-gradient(100deg, oklch(0.75 0.14 75), var(--gold), oklch(0.72 0.15 60));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @utility reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -241,7 +287,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track, .cta-bounce, .pulse-ring, .sparkle, .confetti-bit, .slide-up-bar {
+  .marquee-track, .pulse-ring, .sparkle, .confetti-bit, .slide-up-bar,
+  .floaty, .cta-glow, .textile-drift, .shimmer::after {
     animation: none !important;
   }
   .reveal { opacity: 1; transform: none; transition: none; }
