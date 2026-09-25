@@ -261,12 +261,13 @@
   animation: tholi-glow 2.8s ease-in-out infinite;
 }
 
-/* Woven geometric textile texture — subtle diagonal weave */
+/* Woven geometric textile texture — whisper-fine diagonal weave */
 @utility textile {
   background-image:
-    repeating-linear-gradient(45deg, color-mix(in oklab, var(--brand) 7%, transparent) 0 2px, transparent 2px 12px),
-    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--gold) 9%, transparent) 0 2px, transparent 2px 12px);
+    repeating-linear-gradient(45deg, color-mix(in oklab, var(--brand) 3.5%, transparent) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--gold) 4.5%, transparent) 0 1px, transparent 1px 14px);
 }
+
 
 @utility textile-drift {
   background-size: 96px 96px;
