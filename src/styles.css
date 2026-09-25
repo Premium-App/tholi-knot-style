@@ -413,4 +413,7 @@
     animation: none !important;
   }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .studio-zoom img { transition: none; }
+  .studio-zoom:hover img, .studio-zoom:focus-visible img { transform: none; }
 }
+
