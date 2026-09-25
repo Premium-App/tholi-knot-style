@@ -5,8 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Hind Siliguri", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Hind Siliguri", ui-serif, Georgia, serif;
+  --font-sans: "Hind Siliguri", "Figtree", ui-sans-serif, system-ui, sans-serif;
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-coral: var(--coral);
@@ -17,6 +18,10 @@
   --color-charcoal-foreground: var(--charcoal-foreground);
   --color-peach: var(--peach);
   --color-cream: var(--cream);
+  --color-espresso: var(--espresso);
+  --color-champagne: var(--champagne);
+  --color-linen: var(--linen);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -61,35 +66,40 @@
 
 :root {
   --radius: 0.75rem;
-  --brand: oklch(0.672 0.202 38.5);
-  --brand-foreground: oklch(0.995 0.005 80);
-  --coral: oklch(0.72 0.17 42);
-  --gold: oklch(0.847 0.165 86);
-  --gold-foreground: oklch(0.27 0.02 50);
-  --leaf: oklch(0.52 0.1 150);
-  --charcoal: oklch(0.245 0.02 50);
-  --charcoal-foreground: oklch(0.975 0.015 75);
-  --peach: oklch(0.955 0.028 62);
-  --cream: oklch(0.978 0.014 78);
-  --background: oklch(0.978 0.014 78);
-  --foreground: oklch(0.27 0.02 50);
+  /* Refined terracotta-amber brand, champagne gold, espresso ink */
+  --brand: oklch(0.615 0.168 40);
+  --brand-foreground: oklch(0.99 0.006 80);
+  --coral: oklch(0.678 0.152 44);
+  --gold: oklch(0.815 0.112 82);
+  --champagne: oklch(0.895 0.058 85);
+  --gold-foreground: oklch(0.24 0.025 50);
+  --leaf: oklch(0.5 0.09 152);
+  --charcoal: oklch(0.205 0.021 46);
+  --espresso: oklch(0.158 0.018 44);
+  --charcoal-foreground: oklch(0.968 0.012 78);
+  --peach: oklch(0.958 0.021 66);
+  --linen: oklch(0.945 0.016 72);
+  --cream: oklch(0.982 0.01 80);
+  --background: oklch(0.982 0.01 80);
+  --foreground: oklch(0.225 0.022 48);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.27 0.02 50);
+  --card-foreground: oklch(0.225 0.022 48);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.27 0.02 50);
-  --primary: oklch(0.672 0.202 38.5);
-  --primary-foreground: oklch(0.995 0.005 80);
-  --secondary: oklch(0.955 0.028 62);
-  --secondary-foreground: oklch(0.27 0.02 50);
-  --muted: oklch(0.96 0.01 70);
-  --muted-foreground: oklch(0.5 0.02 55);
-  --accent: oklch(0.72 0.17 42);
-  --accent-foreground: oklch(0.995 0.005 80);
+  --popover-foreground: oklch(0.225 0.022 48);
+  --primary: oklch(0.615 0.168 40);
+  --primary-foreground: oklch(0.99 0.006 80);
+  --secondary: oklch(0.958 0.021 66);
+  --secondary-foreground: oklch(0.225 0.022 48);
+  --muted: oklch(0.955 0.009 70);
+  --muted-foreground: oklch(0.49 0.021 52);
+  --accent: oklch(0.678 0.152 44);
+  --accent-foreground: oklch(0.99 0.006 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.91 0.02 66);
-  --input: oklch(0.9 0.02 66);
-  --ring: oklch(0.672 0.202 38.5);
+  --border: oklch(0.898 0.015 66);
+  --input: oklch(0.888 0.015 66);
+  --ring: oklch(0.615 0.168 40);
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -159,12 +169,21 @@
 
   body {
     font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+
+  p {
+    text-wrap: pretty;
   }
 }
+
 
 @keyframes tholi-marquee {
   from { transform: translateX(0); }
@@ -242,12 +261,13 @@
   animation: tholi-glow 2.8s ease-in-out infinite;
 }
 
-/* Woven geometric textile texture — subtle diagonal weave */
+/* Woven geometric textile texture — whisper-fine diagonal weave */
 @utility textile {
   background-image:
-    repeating-linear-gradient(45deg, color-mix(in oklab, var(--brand) 7%, transparent) 0 2px, transparent 2px 12px),
-    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--gold) 9%, transparent) 0 2px, transparent 2px 12px);
+    repeating-linear-gradient(45deg, color-mix(in oklab, var(--brand) 3.5%, transparent) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-45deg, color-mix(in oklab, var(--gold) 4.5%, transparent) 0 1px, transparent 1px 14px);
 }
+
 
 @utility textile-drift {
   background-size: 96px 96px;
@@ -270,11 +290,112 @@
 }
 
 @utility gold-text {
-  background: linear-gradient(100deg, oklch(0.75 0.14 75), var(--gold), oklch(0.72 0.15 60));
+  background: linear-gradient(100deg, oklch(0.78 0.09 88), var(--gold), oklch(0.7 0.13 62));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
+/* --- Editorial luxe primitives --- */
+
+/* Small-caps editorial eyebrow label */
+@utility eyebrow {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Hairline gold rule used to separate editorial blocks */
+@utility hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--gold) 70%, transparent), transparent);
+}
+
+/* Studio pedestal: soft elliptical ground shadow under the product */
+@utility pedestal {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    bottom: -18px;
+    height: 34px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, color-mix(in oklab, var(--espresso) 26%, transparent), transparent 72%);
+    filter: blur(10px);
+    pointer-events: none;
+  }
+}
+
+/* Museum frame: thin champagne hairline + layered depth shadow */
+@utility lux-frame {
+  border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 65%, transparent) inset,
+    0 18px 40px -22px color-mix(in oklab, var(--espresso) 45%, transparent),
+    0 42px 80px -40px color-mix(in oklab, var(--brand) 32%, transparent);
+}
+
+/* Studio zoom: slow cinematic scale on hover/focus of the parent */
+@utility studio-zoom {
+  overflow: hidden;
+  & img {
+    transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+    will-change: transform;
+  }
+  &:hover img,
+  &:focus-visible img {
+    transform: scale(1.09);
+  }
+}
+
+/* Light-sweep across glass/product surfaces */
+@utility glass-sheen {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, color-mix(in oklab, white 34%, transparent) 0%, transparent 38%, transparent 62%, color-mix(in oklab, white 14%, transparent) 100%);
+    pointer-events: none;
+  }
+}
+
+/* Subtle photographic grain for premium print feel */
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: radial-gradient(color-mix(in oklab, var(--espresso) 16%, transparent) 0.6px, transparent 0.6px);
+    background-size: 3px 3px;
+  }
+}
+
+/* Corner vignette so product photos read as studio shots */
+@utility vignette {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(120% 90% at 50% 35%, transparent 55%, color-mix(in oklab, var(--espresso) 22%, transparent) 100%);
+  }
+}
+
+/* Champagne gradient hairline border for dark sections */
+@utility gold-rule {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  height: 1px;
+}
+
 
 @utility reveal {
   opacity: 0;
@@ -292,4 +413,7 @@
     animation: none !important;
   }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .studio-zoom img { transition: none; }
+  .studio-zoom:hover img, .studio-zoom:focus-visible img { transform: none; }
 }
+
